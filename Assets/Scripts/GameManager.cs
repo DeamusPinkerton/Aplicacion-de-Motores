@@ -67,13 +67,6 @@ public class GameManager : MonoBehaviour
 
     public void Explode()
     {
-        blade.enabled = false;
-        spawner.enabled = false; 
-        ScoreInMenuText.text = score.ToString();
-        int currentLoops = (score / 20);
-        int loops = (currentLoops + PlayerPrefs.GetInt("FrootLoops"));
-        PlayerPrefs.SetInt("FrootLoops", loops);
-        FrootsInMenuText.text = currentLoops.ToString();
         StartCoroutine(ExplodeSequence());
     }
     public void TimesUp()
@@ -108,7 +101,7 @@ public class GameManager : MonoBehaviour
 
         yield return new WaitForSecondsRealtime(1f);
 
-        NewGame();
+        TimesUp();
 
         elapsed = 0f;
 

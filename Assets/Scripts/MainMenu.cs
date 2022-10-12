@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
-        if (PlayerPrefs.HasKey("HasDoneTutorial"))
+        if (PlayerPrefs.GetInt("HasDoneTutorial") > 0)
         {
             SceneManager.LoadScene(1);
         }
@@ -26,7 +26,7 @@ public class MainMenu : MonoBehaviour
     }
     public void FinishTutorial()
     {
-        PlayerPrefs.SetString("HasDoneTuorial", "yes");
+        PlayerPrefs.SetInt("HasDoneTutorial", 1);
         SceneManager.LoadScene(1);
     }
 }
