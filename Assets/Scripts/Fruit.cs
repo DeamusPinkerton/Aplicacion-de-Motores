@@ -12,6 +12,8 @@ public class Fruit : MonoBehaviour
     private ParticleSystem JuicePteEf;
     private AudioSource SliceFrt;
 
+    public int Points = 1;
+
     private void Awake()
     {
         FruitRB = GetComponent<Rigidbody>();
@@ -22,6 +24,8 @@ public class Fruit : MonoBehaviour
 
     private void Slice(Vector3 direction, Vector3 position, float force)
     {
+        FindObjectOfType<GameManager>().IncreaseScore(Points);
+
         Whole.SetActive(false);
         Sliced.SetActive(true);
 
