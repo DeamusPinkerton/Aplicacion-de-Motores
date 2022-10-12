@@ -7,6 +7,11 @@ public class Blade : MonoBehaviour
     private Camera MainCamera;
     private Collider BladeCollider;
     private bool Slicing;
+
+    public Vector3 direction { get; private set; }
+    public float SliceForce = 5f;
+    public float MinSliceVelocity = 0.01f;
+
     private void Awake()
     {
         MainCamera = Camera.main;
@@ -28,9 +33,22 @@ public class Blade : MonoBehaviour
             ContinueSlicing();
         }
     }
+    private void OnEnable()
+    {
+        StopSlicing();
+    }
+    private void OnDisable()
+    {
+        StopSlicing();
+    }
 
     private void StartSlicing()
     {
+        Vector3 newPosition = MainCamera.ScreenToWorldPoint(Input.mousePosition);
+        newPosition.z = -1f;
+
+        transform.position = newPosition;
+
         Slicing = true;
         BladeCollider.enabled = true;
     }
@@ -41,7 +59,15 @@ public class Blade : MonoBehaviour
     }
     private void ContinueSlicing()
     {
+        Vector3 newPosition = MainCamera.ScreenToWorldPoint(Input.mousePosition);
+        newPosition.z = -1f;
 
+        direction = newPosition - transform.position;
+
+        float velocity = direction.magnitude / Time.deltaTime;
+        BladeCollider.enabled = velocity > MinSliceVelocity;
+
+        transform.position = newPosition;
     }
 
 
