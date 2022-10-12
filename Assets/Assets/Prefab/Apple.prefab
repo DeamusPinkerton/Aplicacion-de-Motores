@@ -67,6 +67,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 4086619fc048b9244ba88b79c753c772, type: 2}
+    - target: {fileID: 4173549568877950993, guid: 1bc841bbcd302454eb99887be15bda28, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 6474752295197422822, guid: c12ab5474aaecd04f8d3e29db7230873, type: 2}
     - target: {fileID: 6977360996106885037, guid: 1bc841bbcd302454eb99887be15bda28, type: 3}
       propertyPath: Points
       value: 5

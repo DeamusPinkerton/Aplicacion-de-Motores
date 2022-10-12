@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI ScoreText;
     public Image FadeImage;
     public GameObject timesUp;
+    public TextMeshProUGUI FrootsText;
+    public TextMeshProUGUI ScoreInMenuText;
+    public TextMeshProUGUI FrootsInMenuText;
 
     private Blade blade;
     private Spawner spawner;
@@ -19,6 +22,7 @@ public class GameManager : MonoBehaviour
     {
         blade = FindObjectOfType<Blade>();
         spawner = FindObjectOfType<Spawner>();
+        FrootsText.text = PlayerPrefs.GetInt("FrootLoops", 0).ToString();
     }
 
     private void Start()
@@ -64,8 +68,12 @@ public class GameManager : MonoBehaviour
     public void Explode()
     {
         blade.enabled = false;
-        spawner.enabled = false;
-
+        spawner.enabled = false; 
+        ScoreInMenuText.text = score.ToString();
+        int currentLoops = (score / 20);
+        int loops = (currentLoops + PlayerPrefs.GetInt("FrootLoops"));
+        PlayerPrefs.SetInt("FrootLoops", loops);
+        FrootsInMenuText.text = currentLoops.ToString();
         StartCoroutine(ExplodeSequence());
     }
     public void TimesUp()
@@ -73,6 +81,11 @@ public class GameManager : MonoBehaviour
         blade.enabled = false;
         spawner.enabled = false;
         timesUp.SetActive(true);
+        ScoreInMenuText.text = score.ToString();
+        int currentLoops = (score / 20);
+        int loops = (currentLoops + PlayerPrefs.GetInt("FrootLoops"));
+        PlayerPrefs.SetInt("FrootLoops", loops);
+        FrootsInMenuText.text = currentLoops.ToString();
         ClearScene();
     }
 
