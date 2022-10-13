@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     private Spawner spawner;
 
     private int score;
-
+    public static bool GameStop;
     private void Awake()
     {
         blade = FindObjectOfType<Blade>();
@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     {
         timesUp.SetActive(false);
         NewGame();
+        GameStop = false;
     }
 
     private void NewGame()
