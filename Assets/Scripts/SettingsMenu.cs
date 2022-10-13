@@ -9,18 +9,46 @@ public class SettingsMenu : MonoBehaviour
 
     public void SetMasterVolume(float volume)
     {
-        audioMixer.SetFloat("MasterVolume", volume);
+        if (volume == -40)
+        {
+            audioMixer.SetFloat("MasterVolume", volume * 2);
+        }
+        else
+        {
+            audioMixer.SetFloat("MasterVolume", volume);
+        }
     }
     public void SetMusicVolume(float volume)
     {
-        audioMixer.SetFloat("MusicVolume", volume);
+        if (volume == -40)
+        {
+            audioMixer.SetFloat("MusicVolume", volume * 2);
+        }
+        else
+        {
+            audioMixer.SetFloat("MusicVolume", volume);
+        }
     }
     public void SetBGSVolume(float volume)
     {
-        audioMixer.SetFloat("BGSVolume", volume);
+        if (volume == -40)
+        {
+            audioMixer.SetFloat("BGSVolume", volume * 2);
+        }
+        else
+        {
+            audioMixer.SetFloat("BGSVolume", volume);
+        }
     }
     public void SetSEVolume(float volume)
     {
-        audioMixer.SetFloat("SEVolume", volume);
+        if (volume == -40)
+        {
+            audioMixer.SetFloat("SEVolume", volume * 2);
+        }
+        else
+        {
+            audioMixer.SetFloat("SEVolume", volume);
+        }
     }
 }
