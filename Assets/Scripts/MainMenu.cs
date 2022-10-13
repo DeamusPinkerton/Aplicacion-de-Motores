@@ -24,6 +24,10 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+    public void StoreMenu()
+    {
+        SceneManager.LoadScene(3);
+    }
     public void FinishTutorial()
     {
         PlayerPrefs.SetInt("HasDoneTutorial", 1);
