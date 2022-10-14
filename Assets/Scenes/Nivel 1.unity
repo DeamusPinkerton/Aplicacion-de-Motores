@@ -749,7 +749,9 @@ MonoBehaviour:
   - {fileID: 7455188349668644970, guid: a5b34d13dbd0bae4f8fa34e3dd00ae7b, type: 3}
   - {fileID: 7455188349668644970, guid: f8d63b49b10ca7046a9f9ef661fc820e, type: 3}
   - {fileID: 7455188349668644970, guid: 06e6b79f54135774eb97ba6b2bb77db9, type: 3}
-  BombPrefb: {fileID: 6925920221029350991, guid: d5675336a780770449cfe84f636645e7, type: 3}
+  - {fileID: 5114246276806746757, guid: 572dbf96471476941bab63cfc7462883, type: 3}
+  BombPrefab: {fileID: 6925920221029350991, guid: d5675336a780770449cfe84f636645e7, type: 3}
+  RotPrefab: {fileID: 0}
   bombChance: 0.05
   MinSpawnDelay: 0.25
   MaxSpawnDelay: 1

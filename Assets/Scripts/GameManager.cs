@@ -76,10 +76,18 @@ public class GameManager : MonoBehaviour
         spawner.enabled = false;
         timesUp.SetActive(true);
         ScoreInMenuText.text = score.ToString();
-        int currentLoops = (score / 20);
-        int loops = (currentLoops + PlayerPrefs.GetInt("FrootLoops"));
-        PlayerPrefs.SetInt("FrootLoops", loops);
-        FrootsInMenuText.text = currentLoops.ToString();
+        if (score > 0)
+        {
+            int currentLoops = (score / 20);
+            int loops = (currentLoops + PlayerPrefs.GetInt("FrootLoops"));
+            PlayerPrefs.SetInt("FrootLoops", loops);
+            FrootsInMenuText.text = currentLoops.ToString();
+        }
+        else 
+        {
+            int currentLoops = 0;
+            FrootsInMenuText.text = currentLoops.ToString();
+        }
         ClearScene();
     }
 
