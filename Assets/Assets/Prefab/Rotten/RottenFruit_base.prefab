@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5114246276806746758}
   - component: {fileID: 5114246276806746752}
   - component: {fileID: 6593175320954523663}
+  - component: {fileID: 2120130492109344414}
   m_Layer: 0
   m_Name: RottenFruit_base
   m_TagString: Untagged
@@ -73,7 +74,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5114246276806746757}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 24210699b8c14d4499bd433241941c22, type: 3}
   m_Name: 
@@ -81,6 +82,38 @@ MonoBehaviour:
   Whole: {fileID: 5348053375953785022}
   Sliced: {fileID: 5348053375416646896}
   _speed: 3
+  _timer: 0
+  _changea: 0
+  _changeb: 0
+  _changec: 0
+  _chance: 0
+  Points: -5
+--- !u!114 &2120130492109344414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5114246276806746757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ba04be774777c84294f696c9f20b233, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Whole: {fileID: 5348053375953785022}
+  Sliced: {fileID: 5348053375416646896}
+  SpawnArea: {fileID: 0}
+  MinAngle: -15
+  MaxAngle: 15
+  MinForce: 18
+  MaxForce: 22
+  _isRotten: 1
+  _speed: 3
+  _timer: 0
+  _changea: 0
+  _changeb: 0
+  _changec: 0
+  _chance: 0
   Points: -5
 --- !u!1 &6595332182636901506
 GameObject:
@@ -5122,6 +5155,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 7e2643cce53107e4cb5b54bef35b8df8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b22e3e4fad81bfc4c97de05c2fc9c6d1, type: 2}
     - target: {fileID: 919132149155446097, guid: 7e2643cce53107e4cb5b54bef35b8df8, type: 3}
       propertyPath: m_Name
       value: Whole
@@ -5149,6 +5186,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5114246276806746759}
     m_Modifications:
+    - target: {fileID: -8863667214212606868, guid: 26dbd5626e135184192ad10dc7b6d032, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b22e3e4fad81bfc4c97de05c2fc9c6d1, type: 2}
+    - target: {fileID: -8863667214212606868, guid: 26dbd5626e135184192ad10dc7b6d032, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 891e0e8c48fade94db9d58c8e7ecbbdd, type: 2}
     - target: {fileID: -8679921383154817045, guid: 26dbd5626e135184192ad10dc7b6d032, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -5193,6 +5238,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -895306380916907690, guid: 26dbd5626e135184192ad10dc7b6d032, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b22e3e4fad81bfc4c97de05c2fc9c6d1, type: 2}
+    - target: {fileID: -895306380916907690, guid: 26dbd5626e135184192ad10dc7b6d032, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 891e0e8c48fade94db9d58c8e7ecbbdd, type: 2}
     - target: {fileID: 919132149155446097, guid: 26dbd5626e135184192ad10dc7b6d032, type: 3}
       propertyPath: m_Name
       value: Sliced
