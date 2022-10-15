@@ -6,7 +6,7 @@ public class Fruit : MonoBehaviour
 {
     public GameObject Whole;
     public GameObject Sliced;
-
+    [SerializeField] private int FruitCode = 0;
     [SerializeField] private Collider SpawnArea;
     public float MinAngle = -15f;
     public float MaxAngle = 15f;
@@ -18,6 +18,7 @@ public class Fruit : MonoBehaviour
     private ParticleSystem JuicePteEf;
     private AudioSource SliceFrt;
 
+    [SerializeField] bool _isFruit = true;
     [SerializeField] bool _isRotten = false;
     [SerializeField] float _speed;
     IAdvance _currentAdvance;
@@ -125,37 +126,67 @@ public class Fruit : MonoBehaviour
     */
     private void Slice(Vector3 direction, Vector3 position, float force)
     {
-        FindObjectOfType<GameManager>().IncreaseScore(Points);
-
-        Whole.SetActive(false);
-        Sliced.SetActive(true);
-
-        FruitCLR.enabled = false;
-        JuicePteEf.Play();
-        SliceFrt.Play();
-
-        float Angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        Sliced.transform.rotation = Quaternion.Euler(0f, 0f, Angle);
-
-        Rigidbody[] slices = Sliced.GetComponentsInChildren<Rigidbody>();
-
-        foreach (Rigidbody slice in slices)
+        if (_isFruit)
         {
-            slice.velocity = FruitRB.velocity;
-            slice.AddForceAtPosition(direction * force, position, ForceMode.Impulse);
+            FindObjectOfType<GameManager>().IncreaseScore(Points);
+
+            Whole.SetActive(false);
+            Sliced.SetActive(true);
+
+            FruitCLR.enabled = false;
+            JuicePteEf.Play();
+            SliceFrt.Play();
+
+            float Angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            Sliced.transform.rotation = Quaternion.Euler(0f, 0f, Angle);
+
+            Rigidbody[] slices = Sliced.GetComponentsInChildren<Rigidbody>();
+
+            foreach (Rigidbody slice in slices)
+            {
+                slice.velocity = FruitRB.velocity;
+                slice.AddForceAtPosition(direction * force, position, ForceMode.Impulse);
+            }
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (_isFruit)
         {
-            Blade blade = other.GetComponent<Blade>();
-            Slice(blade.direction,blade.transform.position,blade.SliceForce);
+            if (other.CompareTag("Player"))
+            {
+                Blade blade = other.GetComponent<Blade>();
+                Slice(blade.direction, blade.transform.position, blade.SliceForce);
+            }
         }
         if (other.CompareTag("Limits"))
         {
-            Factory.Instance.ReturnFruit(this);
+            switch (FruitCode)
+            {
+                case 0:
+                    AppleFactory.Instance.ReturnFruit(this);
+                    break;
+                case 1:
+                    KiwiFactory.Instance.ReturnFruit(this);
+                    break;
+                case 2:
+                    WMFactory.Instance.ReturnFruit(this);
+                    break;
+                case 3:
+                    OrangeFactory.Instance.ReturnFruit(this);
+                    break;
+                case 4:
+                    LemonFactory.Instance.ReturnFruit(this);
+                    break;
+                case 5:
+                    BombFactory.Instance.ReturnFruit(this);
+                    break;
+                case 6:
+                    RotFactory.Instance.ReturnFruit(this);
+                    break;
+            }
+
             Vector3 position = new Vector3(0, -9, -1);
             this.transform.position = position;
             FruitRB.velocity = Vector3.zero;
@@ -165,9 +196,12 @@ public class Fruit : MonoBehaviour
 
     private void Reset()
     {
-        Whole.SetActive(true);
-        Sliced.SetActive(false);
-        FruitCLR.enabled = true;
+        if (_isFruit)
+        {
+            Whole.SetActive(true);
+            Sliced.SetActive(false);
+            FruitCLR.enabled = true;
+        }
     }
 
     public static void TurnOn(Fruit b)

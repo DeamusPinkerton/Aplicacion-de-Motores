@@ -83,6 +83,10 @@ PrefabInstance:
       propertyPath: Points
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 6977360996106885037, guid: 1bc841bbcd302454eb99887be15bda28, type: 3}
+      propertyPath: FruitCode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8661672663278541403, guid: 1bc841bbcd302454eb99887be15bda28, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

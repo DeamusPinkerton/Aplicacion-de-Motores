@@ -743,13 +743,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b37d858c99d421148a8d8475f694b1a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FruitPrefab:
-  - {fileID: 7455188349668644970, guid: 532da7e1c6bf8654095597a0eb04c65a, type: 3}
-  - {fileID: 7455188349668644970, guid: deb3297bd47a7024d95c18dadb7d7041, type: 3}
-  - {fileID: 7455188349668644970, guid: a5b34d13dbd0bae4f8fa34e3dd00ae7b, type: 3}
-  - {fileID: 7455188349668644970, guid: f8d63b49b10ca7046a9f9ef661fc820e, type: 3}
-  - {fileID: 7455188349668644970, guid: 06e6b79f54135774eb97ba6b2bb77db9, type: 3}
-  - {fileID: 5114246276806746757, guid: 572dbf96471476941bab63cfc7462883, type: 3}
+  FruitVarieties: 7
   BombPrefab: {fileID: 6925920221029350991, guid: d5675336a780770449cfe84f636645e7, type: 3}
   RotPrefab: {fileID: 0}
   bombChance: 0.05
@@ -2061,6 +2055,12 @@ GameObject:
   m_Component:
   - component: {fileID: 642388032}
   - component: {fileID: 642388033}
+  - component: {fileID: 642388034}
+  - component: {fileID: 642388039}
+  - component: {fileID: 642388038}
+  - component: {fileID: 642388037}
+  - component: {fileID: 642388036}
+  - component: {fileID: 642388035}
   m_Layer: 0
   m_Name: FruitFactory
   m_TagString: Untagged
@@ -2091,10 +2091,94 @@ MonoBehaviour:
   m_GameObject: {fileID: 642388031}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 019e3a1f528ecc9488c53755c26a54f8, type: 3}
+  m_Script: {fileID: 11500000, guid: 7a016fca0708fa4498a3bd91d7123018, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _prefab: {fileID: 994273153912787985, guid: 06e6b79f54135774eb97ba6b2bb77db9, type: 3}
+  _initialStock: 0
+--- !u!114 &642388034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 642388031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e643afa8ca173149aa4b0ea56c3d38b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 994273153912787985, guid: f8d63b49b10ca7046a9f9ef661fc820e, type: 3}
+  _initialStock: 0
+--- !u!114 &642388035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 642388031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a4794629b630564989e2ae37e19f398, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 994273153912787985, guid: 532da7e1c6bf8654095597a0eb04c65a, type: 3}
+  _initialStock: 0
+--- !u!114 &642388036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 642388031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5291fa2079caee140944bc02c1066285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 2120130492109344414, guid: 572dbf96471476941bab63cfc7462883, type: 3}
+  _initialStock: 0
+--- !u!114 &642388037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 642388031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c052237c6d03f8b43a1e9423ea866886, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 994273153912787985, guid: deb3297bd47a7024d95c18dadb7d7041, type: 3}
+  _initialStock: 0
+--- !u!114 &642388038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 642388031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b31f92c7cf3b30e42b6b29120b8acc19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 994273153912787985, guid: a5b34d13dbd0bae4f8fa34e3dd00ae7b, type: 3}
+  _initialStock: 0
+--- !u!114 &642388039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 642388031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a6776ff9caae7845a464674ae411cdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 3109474863236290776, guid: d5675336a780770449cfe84f636645e7, type: 3}
   _initialStock: 0
 --- !u!1 &705528522
 GameObject:

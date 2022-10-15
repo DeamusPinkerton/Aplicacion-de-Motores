@@ -102,11 +102,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Whole: {fileID: 5348053375953785022}
   Sliced: {fileID: 5348053375416646896}
+  FruitCode: 6
   SpawnArea: {fileID: 0}
   MinAngle: -15
   MaxAngle: 15
   MinForce: 18
   MaxForce: 22
+  _isFruit: 1
   _isRotten: 1
   _speed: 3
   _timer: 0

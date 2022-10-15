@@ -255,6 +255,7 @@ GameObject:
   - component: {fileID: 517326028792490916}
   - component: {fileID: 8978424556157995341}
   - component: {fileID: 6502211680032752666}
+  - component: {fileID: 3109474863236290776}
   m_Layer: 0
   m_Name: Bomb
   m_TagString: Untagged
@@ -320,3 +321,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc5260dd356d49b4da98b98ee543a204, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3109474863236290776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6925920221029350991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ba04be774777c84294f696c9f20b233, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Whole: {fileID: 0}
+  Sliced: {fileID: 0}
+  FruitCode: 5
+  SpawnArea: {fileID: 0}
+  MinAngle: -15
+  MaxAngle: 15
+  MinForce: 18
+  MaxForce: 22
+  _isFruit: 0
+  _isRotten: 0
+  _speed: 0
+  _timer: 0
+  _changea: 0
+  _changeb: 0
+  _changec: 0
+  _chance: 0
+  Points: 1

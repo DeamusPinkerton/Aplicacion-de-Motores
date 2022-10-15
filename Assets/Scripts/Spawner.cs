@@ -5,8 +5,8 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     private Collider SpawnArea;
-    public GameObject[] FruitPrefab;
-
+    //public GameObject[] FruitPrefab;
+    public int FruitVarieties = 0;
     public GameObject BombPrefab;
     public GameObject RotPrefab;
 
@@ -44,13 +44,14 @@ public class Spawner : MonoBehaviour
 
         while(enabled)
         {
-            GameObject Prefab = FruitPrefab[Random.Range(0, FruitPrefab.Length)];
-
+            //GameObject Prefab = FruitPrefab[Random.Range(0, FruitPrefab.Length)];
+            int WhichFruit = Random.Range(0, FruitVarieties);
+            /*
             if (Random.value < bombChance)
             {
                 Prefab = BombPrefab;
             }
-
+            */
             Vector3 position = new Vector3();
             position.x = Random.Range(SpawnArea.bounds.min.x, SpawnArea.bounds.max.x);
             position.y = Random.Range(SpawnArea.bounds.min.y, SpawnArea.bounds.max.y);
@@ -58,14 +59,59 @@ public class Spawner : MonoBehaviour
 
             Quaternion rotation = Quaternion.Euler(0f, 0f, Random.Range(MinAngle, MaxAngle));
 
-            Fruit b = Factory.Instance.pool.GetObject();
+            float force = Random.Range(MinForce, MaxForce);
+            if (WhichFruit == 0)
+            {
+                Fruit b = AppleFactory.Instance.pool.GetObject();
+                b.transform.position = position;
+                b.transform.rotation = rotation;
+                b.GetComponent<Rigidbody>().AddForce(b.transform.up * force, ForceMode.Impulse);
+            }
+            else if (WhichFruit == 1)
+            {
+                Fruit b = KiwiFactory.Instance.pool.GetObject();
+                b.transform.position = position;
+                b.transform.rotation = rotation;
+                b.GetComponent<Rigidbody>().AddForce(b.transform.up * force, ForceMode.Impulse);
+            }
+            else if (WhichFruit == 2)
+            {
+                Fruit b = WMFactory.Instance.pool.GetObject();
+                b.transform.position = position;
+                b.transform.rotation = rotation;
+                b.GetComponent<Rigidbody>().AddForce(b.transform.up * force, ForceMode.Impulse);
+            }
+            else if (WhichFruit == 3)
+            {
+                Fruit b = OrangeFactory.Instance.pool.GetObject();
+                b.transform.position = position;
+                b.transform.rotation = rotation;
+                b.GetComponent<Rigidbody>().AddForce(b.transform.up * force, ForceMode.Impulse);
+            }
+            else if (WhichFruit == 4)
+            {
+                Fruit b = LemonFactory.Instance.pool.GetObject();
+                b.transform.position = position;
+                b.transform.rotation = rotation;
+                b.GetComponent<Rigidbody>().AddForce(b.transform.up * force, ForceMode.Impulse);
+            }
+            else if (WhichFruit == 5)
+            {
+                Fruit b = BombFactory.Instance.pool.GetObject();
+                b.transform.position = position;
+                b.transform.rotation = rotation;
+                b.GetComponent<Rigidbody>().AddForce(b.transform.up * force, ForceMode.Impulse);
+            }
+            else if (WhichFruit == 6)
+            {
+                Fruit b = RotFactory.Instance.pool.GetObject();
+                b.transform.position = position;
+                b.transform.rotation = rotation;
+                b.GetComponent<Rigidbody>().AddForce(b.transform.up * force, ForceMode.Impulse);
+            }
             //GameObject fruit = Instantiate(Prefab, position, rotation);
             //Destroy(fruit, MaxLifeTime);
-            b.transform.position = position;
-            b.transform.rotation = rotation;
-            float force = Random.Range(MinForce, MaxForce);
             //fruit.GetComponent<Rigidbody>().AddForce(fruit.transform.up * force, ForceMode.Impulse);
-            b.GetComponent<Rigidbody>().AddForce(b.transform.up * force, ForceMode.Impulse);
 
             yield return new WaitForSeconds(Random.Range(MinSpawnDelay, MaxSpawnDelay));
         }
