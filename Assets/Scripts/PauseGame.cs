@@ -10,10 +10,12 @@ public class PauseGame : MonoBehaviour
     Image img;
     public Sprite Playsprite;
     public Sprite Pauseprite;
+    public GameObject _trailObj;
 
     private void Start()
     {
         img = GetComponent<Image>();
+        //_trailObj = GetComponent<>(Blade);
     }
     public void OnpauseGame()
     {
@@ -23,6 +25,7 @@ public class PauseGame : MonoBehaviour
             img.sprite = Playsprite;
             GameManager.GameStop = true;
             pausemenu.SetActive(true);
+            _trailObj.SetActive(false);
         }
         else
         {
@@ -30,6 +33,7 @@ public class PauseGame : MonoBehaviour
             img.sprite = Pauseprite;
             GameManager.GameStop = false;
             pausemenu.SetActive(false);
+            _trailObj.SetActive(true);
         }
     }
 }

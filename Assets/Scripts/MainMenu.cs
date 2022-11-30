@@ -16,10 +16,6 @@ public class MainMenu : MonoBehaviour
             SceneManager.LoadScene(2);
         }
     }
-    public void QuitGame()
-    {
-        Application.Quit();
-    }
     public void BackToMenu()
     {
         SceneManager.LoadScene(0);
@@ -32,5 +28,11 @@ public class MainMenu : MonoBehaviour
     {
         PlayerPrefs.SetInt("HasDoneTutorial", 1);
         SceneManager.LoadScene(1);
+    }
+    public void ResetButton()
+    {
+        PlayerPrefs.SetInt("HasDoneTutorial", 0);
+        PlayerPrefs.SetInt("FrootLoops", 0);
+        PlayerPrefs.SetInt("currentStamina", 10);
     }
 }

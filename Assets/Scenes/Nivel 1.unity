@@ -322,6 +322,7 @@ MonoBehaviour:
   pausemenu: {fileID: 1685780996}
   Playsprite: {fileID: 21300000, guid: 908394a39732c774284a0d71dbe6bd34, type: 3}
   Pauseprite: {fileID: 21300000, guid: 908394a39732c774284a0d71dbe6bd34, type: 3}
+  _trailObj: {fileID: 1380642633}
 --- !u!114 &100147866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2938,6 +2939,11 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &1380642633 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 763267123152260728, guid: 4cb90a3ebde43824aa88e7e16ed62e28, type: 3}
+  m_PrefabInstance: {fileID: 763267124282655803}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1480198263
 GameObject:
   m_ObjectHideFlags: 0
