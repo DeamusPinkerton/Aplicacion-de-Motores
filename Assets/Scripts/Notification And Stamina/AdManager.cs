@@ -7,6 +7,7 @@ public class AdManager : MonoBehaviour, IUnityAdsListener
 {
     [SerializeField] string gameID = "";
     [SerializeField] string adID = "";
+    [SerializeField] string ad2ID = "";
 
     void Start()
     {
@@ -19,6 +20,12 @@ public class AdManager : MonoBehaviour, IUnityAdsListener
         if (!Advertisement.IsReady()) return;
 
         Advertisement.Show(adID);
+    }    
+    public void ShowAD2()
+    {
+        if (!Advertisement.IsReady()) return;
+
+        Advertisement.Show(ad2ID);
     }
 
     public void OnUnityAdsReady(string placementId)
@@ -35,7 +42,7 @@ public class AdManager : MonoBehaviour, IUnityAdsListener
 
     public void OnUnityAdsDidFinish(string placementId, ShowResult showResult)
     {
-        if (placementId == "Rewarded_Android")
+        if (placementId == "x2Ad")
         {
             if (showResult == ShowResult.Finished)
             {
