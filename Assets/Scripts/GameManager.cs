@@ -13,7 +13,6 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI FrootsText;
     public TextMeshProUGUI ScoreInMenuText;
     public TextMeshProUGUI FrootsInMenuText;
-    private AudioSource SliceBomb;
 
     private Blade blade;
     private Spawner spawner;
@@ -25,7 +24,6 @@ public class GameManager : MonoBehaviour
         blade = FindObjectOfType<Blade>();
         spawner = FindObjectOfType<Spawner>();
         FrootsText.text = PlayerPrefs.GetInt("FrootLoops", 0).ToString();
-        SliceBomb = GetComponentInChildren<AudioSource>();
     }
 
     private void Start()
