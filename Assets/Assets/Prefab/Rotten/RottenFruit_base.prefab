@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5114246276806746759}
   - component: {fileID: 5114246276806746758}
   - component: {fileID: 5114246276806746752}
-  - component: {fileID: 6593175320954523663}
   - component: {fileID: 2120130492109344414}
   m_Layer: 0
   m_Name: RottenFruit_base
@@ -67,27 +66,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1.01
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6593175320954523663
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5114246276806746757}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24210699b8c14d4499bd433241941c22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Whole: {fileID: 5348053375953785022}
-  Sliced: {fileID: 5348053375416646896}
-  _speed: 3
-  _timer: 0
-  _changea: 0
-  _changeb: 0
-  _changec: 0
-  _chance: 0
-  Points: -5
 --- !u!114 &2120130492109344414
 MonoBehaviour:
   m_ObjectHideFlags: 0
