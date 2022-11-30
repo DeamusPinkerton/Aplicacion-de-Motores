@@ -80,6 +80,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Whole: {fileID: 481745996258388461}
   Sliced: {fileID: 481745994648044963}
+  FruitCode: 0
+  SpawnArea: {fileID: 0}
+  MinAngle: -15
+  MaxAngle: 15
+  MinForce: 18
+  MaxForce: 22
+  _isFruit: 1
+  _isRotten: 0
+  _speed: 0
+  _timer: 0
+  _changea: 0
+  _changeb: 0
+  _changec: 0
+  _chance: 0
   Points: 1
 --- !u!1 &1662049223580405201
 GameObject:

@@ -8,10 +8,12 @@ public class GameManager : MonoBehaviour
 {
     public TextMeshProUGUI ScoreText;
     public Image FadeImage;
+    public Image PuajImage;
     public GameObject timesUp;
     public TextMeshProUGUI FrootsText;
     public TextMeshProUGUI ScoreInMenuText;
     public TextMeshProUGUI FrootsInMenuText;
+    private AudioSource SliceBomb;
 
     private Blade blade;
     private Spawner spawner;
@@ -23,6 +25,7 @@ public class GameManager : MonoBehaviour
         blade = FindObjectOfType<Blade>();
         spawner = FindObjectOfType<Spawner>();
         FrootsText.text = PlayerPrefs.GetInt("FrootLoops", 0).ToString();
+        SliceBomb = GetComponentInChildren<AudioSource>();
     }
 
     private void Start()
@@ -119,6 +122,40 @@ public class GameManager : MonoBehaviour
             float t = Mathf.Clamp01(elapsed / duration);
 
             FadeImage.color = Color.Lerp(Color.white, Color.clear, t);
+
+            Time.timeScale = 1f - t;
+
+            elapsed += Time.unscaledDeltaTime;
+            yield return null;
+        }
+
+    }
+    private IEnumerator RottenFruit()
+    {
+        float elapsed = 0f;
+        float duration = 0.5f;
+
+        while (elapsed < duration)
+        {
+            float t = Mathf.Clamp01(elapsed / duration);
+
+            PuajImage.color = Color.Lerp(Color.clear, Color.white, t);
+
+            Time.timeScale = 1f - t;
+
+            elapsed += Time.unscaledDeltaTime;
+            yield return null;
+        }
+
+        yield return new WaitForSecondsRealtime(0.3f);
+
+        elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            float t = Mathf.Clamp01(elapsed / duration);
+
+            PuajImage.color = Color.Lerp(Color.white, Color.clear, t);
 
             Time.timeScale = 1f - t;
 

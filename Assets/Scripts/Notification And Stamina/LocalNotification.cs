@@ -33,9 +33,8 @@ public class LocalNotification : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SendNot()
     {
-        
+
     }
 }
