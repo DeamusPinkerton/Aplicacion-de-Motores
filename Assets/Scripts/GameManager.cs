@@ -71,6 +71,10 @@ public class GameManager : MonoBehaviour
     {
         StartCoroutine(ExplodeSequence());
     }
+    public void RottenFruit()
+    {
+        StartCoroutine(Puaj(true));
+    }
     public void TimesUp()
     {
         blade.enabled = false;
@@ -128,37 +132,29 @@ public class GameManager : MonoBehaviour
         }
 
     }
-    private IEnumerator RottenFruit()
+    private IEnumerator Puaj(bool fadeAway)
     {
-        float elapsed = 0f;
-        float duration = 0.5f;
-
-        while (elapsed < duration)
+        // fade from opaque to transparent
+        if (fadeAway)
         {
-            float t = Mathf.Clamp01(elapsed / duration);
-
-            PuajImage.color = Color.Lerp(Color.clear, Color.white, t);
-
-            Time.timeScale = 1f - t;
-
-            elapsed += Time.unscaledDeltaTime;
-            yield return null;
+            // loop over 1 second backwards
+            for (float i = 1; i >= 0; i -= Time.deltaTime)
+            {
+                // set color with i as alpha
+                PuajImage.color = new Color(1, 1, 1, i);
+                yield return null;
+            }
         }
-
-        yield return new WaitForSecondsRealtime(0.3f);
-
-        elapsed = 0f;
-
-        while (elapsed < duration)
+        // fade from transparent to opaque
+        else
         {
-            float t = Mathf.Clamp01(elapsed / duration);
-
-            PuajImage.color = Color.Lerp(Color.white, Color.clear, t);
-
-            Time.timeScale = 1f - t;
-
-            elapsed += Time.unscaledDeltaTime;
-            yield return null;
+            // loop over 1 second
+            for (float i = 0; i <= 1; i += Time.deltaTime)
+            {
+                // set color with i as alpha
+                PuajImage.color = new Color(1, 1, 1, i);
+                yield return null;
+            }
         }
 
     }

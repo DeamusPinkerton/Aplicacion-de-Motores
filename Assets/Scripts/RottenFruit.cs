@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RottenFruit : MonoBehaviour
 {
+    /*
     public GameObject Whole;
     public GameObject Sliced;
 
@@ -127,6 +128,14 @@ public class RottenFruit : MonoBehaviour
         {
             Blade blade = other.GetComponent<Blade>();
             Slice(blade.direction, blade.transform.position, blade.SliceForce);
+        }
+    }
+    */
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            FindObjectOfType<GameManager>().RottenFruit();
         }
     }
 }
