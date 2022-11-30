@@ -962,9 +962,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c6502a48974f5ec468d3448328e67cdf, type: 2}
   - {fileID: 11400000, guid: 44ab18c30ac7eb84197d6bbcdd6dd67d, type: 2}
   - {fileID: 11400000, guid: 07a57ad3f22b02e4da3fabe1770b1f86, type: 2}
-  - {fileID: 11400000, guid: d42a443a9e6d3aa41a9c4aa6a08fd55d, type: 2}
-  - {fileID: 11400000, guid: 5d8876ceb61ef684ab01df7c2ecee06b, type: 2}
-  - {fileID: 11400000, guid: 817532ce8cf43b245bfac44923898814, type: 2}
   ShopPanelsGO:
   - {fileID: 2129664818}
   - {fileID: 1656536796}
