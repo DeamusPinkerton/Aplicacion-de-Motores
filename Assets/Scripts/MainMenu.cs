@@ -34,5 +34,7 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.SetInt("HasDoneTutorial", 0);
         PlayerPrefs.SetInt("FrootLoops", 0);
         PlayerPrefs.SetInt("currentStamina", 10);
+        PlayerPrefs.SetInt("MaxStamina", 10);
+        PlayerPrefs.SetInt("CosmicKnife", 0);
     }
 }

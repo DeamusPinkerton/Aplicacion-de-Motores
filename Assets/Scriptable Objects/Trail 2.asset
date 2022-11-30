@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9548cf3f5aa9e74cbe03e5c9cca57ab, type: 3}
   m_Name: Trail 2
   m_EditorClassIdentifier: 
-  Title: Cosmos
-  Description: An entire universe in your finger
+  Title: Extra battery
+  Description: Adds an extra charge to your stamina
   BaseCost: 100

@@ -53,8 +53,38 @@ public class ShopManager : MonoBehaviour
         {
             FrootCoin = FrootCoin - ShopItemsSO[btnNO].BaseCost;
             PlayerPrefs.SetInt("FrootLoops", FrootCoin);
-            FrootUI.text = FrootCoin.ToString();
             CheckPurchaseable();
+            if (btnNO == 0)
+            {
+                if (PlayerPrefs.GetInt("currentStamina") < PlayerPrefs.GetInt("MaxStamina"))
+                {
+                    PlayerPrefs.SetInt("currentStamina", PlayerPrefs.GetInt("MaxStamina"));
+                }
+                else
+                {
+                    Debug.Log("Stamina is already full!");
+                    FrootCoin = FrootCoin + ShopItemsSO[btnNO].BaseCost;
+                }
+            }
+            else if (btnNO == 1)
+            {
+                PlayerPrefs.SetInt("MaxStamina", (PlayerPrefs.GetInt("MaxStamina") + 1));
+            }
+            else if (btnNO == 2)
+            {
+                if (PlayerPrefs.GetInt("CosmicKnife") == 0)
+                {
+                    PlayerPrefs.SetInt("CosmicKnife", 2);
+                }
+                else
+                {
+                    Debug.Log("You already own this item!");
+                    FrootCoin = FrootCoin + ShopItemsSO[btnNO].BaseCost;
+                }
+
+            }
+            PlayerPrefs.SetInt("FrootLoops", FrootCoin);
+            FrootUI.text = FrootCoin.ToString();
         }
     }
 

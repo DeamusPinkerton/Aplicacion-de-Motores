@@ -322,7 +322,7 @@ MonoBehaviour:
   pausemenu: {fileID: 1685780996}
   Playsprite: {fileID: 21300000, guid: 908394a39732c774284a0d71dbe6bd34, type: 3}
   Pauseprite: {fileID: 21300000, guid: 908394a39732c774284a0d71dbe6bd34, type: 3}
-  _trailObj: {fileID: 1380642633}
+  _trailObj: {fileID: 1063706895}
 --- !u!114 &100147866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2852,6 +2852,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 10, y: 0, z: 0}
+--- !u!1 &1063706895 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 763267123241922327, guid: 4cb90a3ebde43824aa88e7e16ed62e28, type: 3}
+  m_PrefabInstance: {fileID: 763267124282655803}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1203392944
 GameObject:
   m_ObjectHideFlags: 0
@@ -2939,11 +2944,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &1380642633 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 763267123152260728, guid: 4cb90a3ebde43824aa88e7e16ed62e28, type: 3}
-  m_PrefabInstance: {fileID: 763267124282655803}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1480198263
 GameObject:
   m_ObjectHideFlags: 0
@@ -3856,6 +3856,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 763267123152260728, guid: 4cb90a3ebde43824aa88e7e16ed62e28, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 763267123241922324, guid: 4cb90a3ebde43824aa88e7e16ed62e28, type: 3}
+      propertyPath: _trailA
+      value: 
+      objectReference: {fileID: 763267124282655805}
+    - target: {fileID: 763267123241922324, guid: 4cb90a3ebde43824aa88e7e16ed62e28, type: 3}
+      propertyPath: _trailB
+      value: 
+      objectReference: {fileID: 763267124282655804}
     - target: {fileID: 763267123241922326, guid: 4cb90a3ebde43824aa88e7e16ed62e28, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -3904,5 +3916,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blade
       objectReference: {fileID: 0}
+    - target: {fileID: 8261134593296394878, guid: 4cb90a3ebde43824aa88e7e16ed62e28, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4cb90a3ebde43824aa88e7e16ed62e28, type: 3}
+--- !u!1 &763267124282655804 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8261134593296394878, guid: 4cb90a3ebde43824aa88e7e16ed62e28, type: 3}
+  m_PrefabInstance: {fileID: 763267124282655803}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &763267124282655805 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 763267123152260728, guid: 4cb90a3ebde43824aa88e7e16ed62e28, type: 3}
+  m_PrefabInstance: {fileID: 763267124282655803}
+  m_PrefabAsset: {fileID: 0}

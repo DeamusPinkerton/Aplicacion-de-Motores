@@ -26,9 +26,10 @@ public class Stamina : MonoBehaviour
     {
         if (!PlayerPrefs.HasKey("currentStamina"))
         {
-            PlayerPrefs.SetInt("currentStamina", maxStamina);
+            PlayerPrefs.GetInt("MaxStamina", 10);
+            PlayerPrefs.SetInt("currentStamina", PlayerPrefs.GetInt("MaxStamina"));
         }
-
+        maxStamina = PlayerPrefs.GetInt("MaxStamina");
         Load();
         StartCoroutine(RechargeStamina());
         CheckPurchaseable();
@@ -41,7 +42,7 @@ public class Stamina : MonoBehaviour
     {
         UpdateTimer();
         recharging = true;
-
+        maxStamina = PlayerPrefs.GetInt("MaxStamina");
         while (currentStamina < maxStamina)
         {
             DateTime currentTime = DateTime.Now;
@@ -102,7 +103,7 @@ public class Stamina : MonoBehaviour
         }
         else
         {
-            Debug.Log("No tengo Stamina!");
+            Debug.Log("I'm out of Stamina!");
         }
 
     }
@@ -120,6 +121,7 @@ public class Stamina : MonoBehaviour
     }
     void UpdateTimer()
     {
+        maxStamina = PlayerPrefs.GetInt("MaxStamina");
         if (currentStamina >= maxStamina)
         {
             timerText.text = "Full Stamina!";
@@ -135,6 +137,7 @@ public class Stamina : MonoBehaviour
 
     void UpdateStamina()
     {
+        maxStamina = PlayerPrefs.GetInt("MaxStamina");
         staminaText.text = currentStamina.ToString() + " / " + maxStamina.ToString();
     }
 

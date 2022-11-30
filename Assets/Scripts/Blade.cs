@@ -7,6 +7,8 @@ public class Blade : MonoBehaviour
     private Camera MainCamera;
     private Collider BladeCollider;
     private bool Slicing;
+    public GameObject _trailA;
+    public GameObject _trailB;
 
     public Vector3 direction { get; private set; }
     public float SliceForce = 5f;
@@ -16,6 +18,16 @@ public class Blade : MonoBehaviour
     {
         MainCamera = Camera.main;
         BladeCollider = GetComponent<Collider>();
+        if (PlayerPrefs.GetInt("CosmicKnife") == 2)
+        {
+            _trailB.SetActive(true);
+            _trailA.SetActive(false);
+        }
+        else
+        {
+            _trailA.SetActive(true);
+            _trailB.SetActive(false);
+        }
     }
     void Update()
     {
