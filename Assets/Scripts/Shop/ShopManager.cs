@@ -19,7 +19,8 @@ public class ShopManager : MonoBehaviour
         {
             ShopPanelsGO[i].SetActive(true);
         }
-        FrootUI.text = PlayerPrefs.GetString("FrootLoops");
+        FrootCoin = PlayerPrefs.GetInt("FrootLoops");
+        FrootUI.text = FrootCoin.ToString();
         LoadPanels();
         CheckPurchaseable();
     }
@@ -51,6 +52,7 @@ public class ShopManager : MonoBehaviour
         if (FrootCoin >= ShopItemsSO[btnNO].BaseCost)
         {
             FrootCoin = FrootCoin - ShopItemsSO[btnNO].BaseCost;
+            PlayerPrefs.SetInt("FrootLoops", FrootCoin);
             FrootUI.text = FrootCoin.ToString();
             CheckPurchaseable();
         }
