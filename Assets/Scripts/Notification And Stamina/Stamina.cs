@@ -43,7 +43,7 @@ public class Stamina : MonoBehaviour
         UpdateTimer();
         recharging = true;
         maxStamina = PlayerPrefs.GetInt("MaxStamina");
-        while (currentStamina < maxStamina)
+        while (PlayerPrefs.GetInt("currentStamina") < maxStamina)
         {
             DateTime currentTime = DateTime.Now;
             DateTime nextTime = nextStaminaTime;
@@ -52,9 +52,9 @@ public class Stamina : MonoBehaviour
 
             while (currentTime > nextTime)
             {
-                if (currentStamina >= maxStamina) break;
+                if (PlayerPrefs.GetInt("currentStamina") >= maxStamina) break;
 
-                currentStamina += 1;
+                PlayerPrefs.SetInt("currentStamina", PlayerPrefs.GetInt("currentStamina") + 1);
                 staminaAdd = true;
                 UpdateStamina();
                 CheckPurchaseable();
@@ -90,9 +90,9 @@ public class Stamina : MonoBehaviour
 
     public void UseStamina(int staminaToUse)
     {
-        if (currentStamina - staminaToUse >= 0)
+        if (PlayerPrefs.GetInt("currentStamina") - staminaToUse >= 0)
         {
-            currentStamina -= staminaToUse;
+            PlayerPrefs.SetInt("currentStamina", PlayerPrefs.GetInt("currentStamina") - staminaToUse);
             UpdateStamina();
 
             if (!recharging)
@@ -110,7 +110,8 @@ public class Stamina : MonoBehaviour
 
     public void CheckPurchaseable()
     {
-        if (currentStamina >= 5)
+        maxStamina = PlayerPrefs.GetInt("MaxStamina");
+        if (PlayerPrefs.GetInt("currentStamina") >= 5)
         {
           PurshadeBtns.interactable = true;
         }
@@ -122,7 +123,7 @@ public class Stamina : MonoBehaviour
     void UpdateTimer()
     {
         maxStamina = PlayerPrefs.GetInt("MaxStamina");
-        if (currentStamina >= maxStamina)
+        if (PlayerPrefs.GetInt("currentStamina") >= maxStamina)
         {
             timerText.text = "Full Stamina!";
 
@@ -138,6 +139,7 @@ public class Stamina : MonoBehaviour
     void UpdateStamina()
     {
         maxStamina = PlayerPrefs.GetInt("MaxStamina");
+        currentStamina = PlayerPrefs.GetInt("currentStamina");
         staminaText.text = currentStamina.ToString() + " / " + maxStamina.ToString();
     }
 
