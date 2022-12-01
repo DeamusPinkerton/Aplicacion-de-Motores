@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     {
         blade = FindObjectOfType<Blade>();
         spawner = FindObjectOfType<Spawner>();
-        FrootsText.text = PlayerPrefs.GetInt("FrootLoops", 0).ToString();
+        FrootsText.text = PlayerPrefs.GetInt("FrootLoops").ToString();
     }
 
     private void Start()
@@ -84,6 +84,7 @@ public class GameManager : MonoBehaviour
         if (score > 0)
         {
             int currentLoops = (score / 20);
+            PlayerPrefs.SetInt("LastLoops", currentLoops);
             int loops = (currentLoops + PlayerPrefs.GetInt("FrootLoops"));
             PlayerPrefs.SetInt("FrootLoops", loops);
             FrootsInMenuText.text = currentLoops.ToString();
