@@ -35,15 +35,15 @@ public class Stamina : MonoBehaviour
         CheckPurchaseable();
     }
 
-
-    public bool HasEnoughStamina(int stamina) => currentStamina - stamina >= 0;
+    //public bool HasEnoughStamina(int stamina) => currentStamina - stamina >= 0;
 
     IEnumerator RechargeStamina()
     {
         UpdateTimer();
         recharging = true;
+        currentStamina = PlayerPrefs.GetInt("currentStamina");
         maxStamina = PlayerPrefs.GetInt("MaxStamina");
-        while (PlayerPrefs.GetInt("currentStamina") < maxStamina)
+        while (currentStamina < maxStamina)
         {
             DateTime currentTime = DateTime.Now;
             DateTime nextTime = nextStaminaTime;
@@ -52,9 +52,9 @@ public class Stamina : MonoBehaviour
 
             while (currentTime > nextTime)
             {
-                if (PlayerPrefs.GetInt("currentStamina") >= maxStamina) break;
-
-                PlayerPrefs.SetInt("currentStamina", PlayerPrefs.GetInt("currentStamina") + 1);
+                if (currentStamina >= maxStamina) break;
+                currentStamina = PlayerPrefs.GetInt("currentStamina");
+                PlayerPrefs.SetInt("currentStamina", (currentStamina + 1));
                 staminaAdd = true;
                 UpdateStamina();
                 CheckPurchaseable();
@@ -90,9 +90,10 @@ public class Stamina : MonoBehaviour
 
     public void UseStamina(int staminaToUse)
     {
-        if (PlayerPrefs.GetInt("currentStamina") - staminaToUse >= 0)
+        currentStamina = PlayerPrefs.GetInt("currentStamina");
+        if (currentStamina - staminaToUse >= 0)
         {
-            PlayerPrefs.SetInt("currentStamina", PlayerPrefs.GetInt("currentStamina") - staminaToUse);
+            PlayerPrefs.SetInt("currentStamina", (currentStamina - staminaToUse));
             UpdateStamina();
 
             if (!recharging)
@@ -105,13 +106,14 @@ public class Stamina : MonoBehaviour
         {
             Debug.Log("I'm out of Stamina!");
         }
-
+        currentStamina = PlayerPrefs.GetInt("currentStamina");
     }
 
     public void CheckPurchaseable()
     {
+        currentStamina = PlayerPrefs.GetInt("currentStamina");
         maxStamina = PlayerPrefs.GetInt("MaxStamina");
-        if (PlayerPrefs.GetInt("currentStamina") >= 5)
+        if (currentStamina >= 5)
         {
           PurshadeBtns.interactable = true;
         }
@@ -122,8 +124,9 @@ public class Stamina : MonoBehaviour
     }
     void UpdateTimer()
     {
+        currentStamina = PlayerPrefs.GetInt("currentStamina");
         maxStamina = PlayerPrefs.GetInt("MaxStamina");
-        if (PlayerPrefs.GetInt("currentStamina") >= maxStamina)
+        if (currentStamina >= maxStamina)
         {
             timerText.text = "Full Stamina!";
 
@@ -152,7 +155,6 @@ public class Stamina : MonoBehaviour
 
     void Load()
     {
-        currentStamina = PlayerPrefs.GetInt("currentStamina");
         nextStaminaTime = StringToDateTime(PlayerPrefs.GetString("nextStaminaTime"));
         lastStaminaTime = StringToDateTime(PlayerPrefs.GetString("lastStaminaTime"));
     }
