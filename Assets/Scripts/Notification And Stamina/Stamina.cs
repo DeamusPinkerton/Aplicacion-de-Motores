@@ -22,13 +22,18 @@ public class Stamina : MonoBehaviour
 
     public Button PurshadeBtns;
 
-    private void Start()
+    private void Awake()
     {
         if (!PlayerPrefs.HasKey("currentStamina"))
         {
-            PlayerPrefs.GetInt("MaxStamina", 10);
-            PlayerPrefs.SetInt("currentStamina", PlayerPrefs.GetInt("MaxStamina"));
+            PlayerPrefs.SetInt("MaxStamina", 10);
+            maxStamina = PlayerPrefs.GetInt("MaxStamina");
+            PlayerPrefs.SetInt("currentStamina", maxStamina);
         }
+    }
+
+    private void Start()
+    {
         maxStamina = PlayerPrefs.GetInt("MaxStamina");
         Load();
         StartCoroutine(RechargeStamina());
