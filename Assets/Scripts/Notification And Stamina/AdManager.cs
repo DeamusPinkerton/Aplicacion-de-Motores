@@ -46,9 +46,19 @@ public class AdManager : MonoBehaviour, IUnityAdsListener
         {
             if (showResult == ShowResult.Finished)
             {
-                int loops = (PlayerPrefs.GetInt("LastLoops") + PlayerPrefs.GetInt("FrootLoops"));
-                PlayerPrefs.SetInt("FrootLoops", loops);
-                Debug.Log("Te doy la recompensa");
+                bool Seen = false;
+                if (!Seen)
+                {
+                    Seen = true;
+                    int loops = (PlayerPrefs.GetInt("LastLoops") + PlayerPrefs.GetInt("FrootLoops"));
+                    PlayerPrefs.SetInt("FrootLoops", loops);
+                    PlayerPrefs.SetInt("LastLoops", 0);
+                    Debug.Log("Te doy la recompensa");
+                }
+                else
+                {
+                    Debug.Log("Ya esta papu");
+                }
             }
             else
             {
