@@ -24,9 +24,7 @@ public class LocalNotification : MonoBehaviour
 
         var notification = new AndroidNotification();
         notification.Title = "Hey, Come Back!!!";
-        notification.Text = "You´r Energy is Full!!";
-        notification.SmallIcon = "icon_reminders";
-        notification.LargeIcon = "icon_reminder";
+        notification.Text = "We miss you :(";
         notification.FireTime = DateTime.Now.AddSeconds(30);
 
         var id = AndroidNotificationCenter.SendNotification(notification, "reminder_notif_ch");
