@@ -29,12 +29,14 @@ public class LocalNotification : MonoBehaviour
         notification.LargeIcon = "icon_reminder";
         notification.FireTime = DateTime.Now.AddSeconds(30);
 
-        AndroidNotificationCenter.SendNotification(notification, "reminder_notif_ch");
+        var id = AndroidNotificationCenter.SendNotification(notification, "reminder_notif_ch");
+
+        if (AndroidNotificationCenter.CheckScheduledNotificationStatus(id) == NotificationStatus.Scheduled)
+        {
+            AndroidNotificationCenter.CancelAllNotifications();
+            AndroidNotificationCenter.SendNotification(notification, "reminder_notif_ch");
+        }
 
     }
 
-    public void SendNot()
-    {
-
-    }
 }
