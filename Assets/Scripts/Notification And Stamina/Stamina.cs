@@ -109,7 +109,7 @@ public class Stamina : MonoBehaviour
         }
         else
         {
-            Debug.Log("I'm out of Stamina!");
+                Debug.Log("I'm out of Stamina!");
         }
         currentStamina = PlayerPrefs.GetInt("currentStamina");
     }
@@ -133,7 +133,15 @@ public class Stamina : MonoBehaviour
         maxStamina = PlayerPrefs.GetInt("MaxStamina");
         if (currentStamina >= maxStamina)
         {
-            timerText.text = "Full Stamina!";
+            if (PlayerPrefs.GetInt("Language") == 1)
+            {
+                timerText.text = "Energia Completa!";
+            }
+            else
+            {
+                timerText.text = "Full Stamina!";
+            }
+            
 
             return;
         }
