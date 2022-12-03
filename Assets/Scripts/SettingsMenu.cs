@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
-public class SettingsMenu : ScreenUI//MonoBehaviour
+public class SettingsMenu : MonoBehaviour
 {
     public AudioMixer audioMixer;
 
@@ -50,9 +50,5 @@ public class SettingsMenu : ScreenUI//MonoBehaviour
         {
             audioMixer.SetFloat("SEVolume", volume);
         }
-    }
-    public void BTN_Back()
-    {
-        ScreenManager.Instance.Pop();
     }
 }

@@ -55,8 +55,6 @@ public class LanguageManager : MonoBehaviour
 
     public string GetTranslate(string id)
     {
-        return _languageManager[_selectedLanguage][id];
-        /*
         if (!_languageManager[_selectedLanguage].ContainsKey(id))
         {
             return "Error 404, Not Found";
@@ -65,7 +63,6 @@ public class LanguageManager : MonoBehaviour
         {
             return _languageManager[_selectedLanguage][id];
         }
-        */
     }
 
     IEnumerator DownloadCSV(string url)
