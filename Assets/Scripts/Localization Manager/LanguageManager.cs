@@ -23,8 +23,7 @@ public class LanguageManager : MonoBehaviour
     {
         StartCoroutine(DownloadCSV(_externalURL));
     }
-
-    
+    /*
     void Update()
     {
         if (PlayerPrefs.GetInt("Language") == 1)
@@ -35,9 +34,8 @@ public class LanguageManager : MonoBehaviour
         {
             _selectedLanguage = Language.eng;
         }
-        onUpdate();
     }
-
+    */
     public void SwapLanguage()
     {
         if (_selectedLanguage == Language.eng)

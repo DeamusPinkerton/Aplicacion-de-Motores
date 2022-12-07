@@ -19,6 +19,7 @@ public class Config : MonoBehaviour
         var ScreenOptions = Instantiate(Resources.Load<ScreenOptions>("SettingsMenu"), _canvasFather);
         ScreenManager.Instance.Push(ScreenOptions);
     }
+
     public void MenuBack()
     {
         ScreenManager.Instance.Pop();

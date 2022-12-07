@@ -17,7 +17,7 @@ public class ScreenManager : MonoBehaviour
 
     public void Pop()
     {
-        if (_screenStack.Count <= 1) return;
+        if (_screenStack.Count < 1) return;
 
         _screenStack.Pop().Free();
 

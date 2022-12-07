@@ -13,11 +13,6 @@ public class ScreenGO : IScreen
         _root = root;
 
         _before = new Dictionary<Behaviour, bool>();
-
-        foreach (var b in root.GetComponentsInChildren<Behaviour>())
-        {
-            b.gameObject.GetComponent<Renderer>().material.color = Color.green;
-        }
     }
 
     public void Activate()
