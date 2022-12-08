@@ -23,7 +23,7 @@ public class LanguageManager : MonoBehaviour
     {
         StartCoroutine(DownloadCSV(_externalURL));
     }
-    /*
+
     void Update()
     {
         if (PlayerPrefs.GetInt("Language") == 1)
@@ -35,7 +35,7 @@ public class LanguageManager : MonoBehaviour
             _selectedLanguage = Language.eng;
         }
     }
-    */
+
     public void SwapLanguage()
     {
         if (_selectedLanguage == Language.eng)
@@ -48,7 +48,7 @@ public class LanguageManager : MonoBehaviour
             PlayerPrefs.SetInt("Language", 0);
             _selectedLanguage = Language.eng;
         }
-        onUpdate();
+        //onUpdate();
     }
 
     public string GetTranslate(string id)
