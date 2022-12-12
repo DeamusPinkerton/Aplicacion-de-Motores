@@ -312,7 +312,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ID: ID_I2
-  _langManager: {fileID: 1346388854}
   _myView: {fileID: 1672396329}
 --- !u!114 &28124638
 MonoBehaviour:
@@ -327,7 +326,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ID: ID_Back
-  _langManager: {fileID: 1346388854}
   _myView: {fileID: 734786794}
 --- !u!114 &28124639
 MonoBehaviour:
@@ -342,7 +340,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ID: ID_Next
-  _langManager: {fileID: 1346388854}
   _myView: {fileID: 1182782088}
 --- !u!1 &53324720
 GameObject:
@@ -2277,7 +2274,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ID: ID_I1
-  _langManager: {fileID: 1346388854}
   _myView: {fileID: 596000900}
 --- !u!114 &951685672
 MonoBehaviour:
@@ -2292,7 +2288,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ID: ID_Back
-  _langManager: {fileID: 1346388854}
   _myView: {fileID: 1134360963}
 --- !u!114 &951685673
 MonoBehaviour:
@@ -2307,7 +2302,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ID: ID_Next
-  _langManager: {fileID: 1346388854}
   _myView: {fileID: 1906908614}
 --- !u!1 &1001604825
 GameObject:
@@ -2439,7 +2433,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ID: ID_I3
-  _langManager: {fileID: 1346388854}
   _myView: {fileID: 674693663}
 --- !u!114 &1032443252
 MonoBehaviour:
@@ -2454,7 +2447,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ID: ID_Back
-  _langManager: {fileID: 1346388854}
   _myView: {fileID: 875900287}
 --- !u!114 &1032443253
 MonoBehaviour:
@@ -2469,7 +2461,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ID: ID_Next
-  _langManager: {fileID: 1346388854}
   _myView: {fileID: 1633308792}
 --- !u!1 &1042859760
 GameObject:
@@ -3207,7 +3198,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ID: ID_HTP
-  _langManager: {fileID: 1346388854}
   _myView: {fileID: 1124861175}
 --- !u!1 &1134360961
 GameObject:
@@ -3910,6 +3900,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1346388855}
   - component: {fileID: 1346388854}
+  - component: {fileID: 1346388856}
   m_Layer: 0
   m_Name: LanguageManager
   m_TagString: Untagged
@@ -3945,6 +3936,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1346388856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346388853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3e9da237c863bf4fb4aec6d5b308ad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1413471423
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4045,6 +4048,58 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 693919283498931514, guid: 82d1821485d0ec0468193ebf58acdb6d, type: 3}
+      propertyPath: m_Colors.m_NormalColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 693919283498931514, guid: 82d1821485d0ec0468193ebf58acdb6d, type: 3}
+      propertyPath: m_Colors.m_NormalColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 693919283498931514, guid: 82d1821485d0ec0468193ebf58acdb6d, type: 3}
+      propertyPath: m_Colors.m_NormalColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 693919283498931514, guid: 82d1821485d0ec0468193ebf58acdb6d, type: 3}
+      propertyPath: m_Colors.m_PressedColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 693919283498931514, guid: 82d1821485d0ec0468193ebf58acdb6d, type: 3}
+      propertyPath: m_Colors.m_PressedColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 693919283498931514, guid: 82d1821485d0ec0468193ebf58acdb6d, type: 3}
+      propertyPath: m_Colors.m_PressedColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 693919283498931514, guid: 82d1821485d0ec0468193ebf58acdb6d, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 693919283498931514, guid: 82d1821485d0ec0468193ebf58acdb6d, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 693919283498931514, guid: 82d1821485d0ec0468193ebf58acdb6d, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 693919283498931514, guid: 82d1821485d0ec0468193ebf58acdb6d, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 693919283498931514, guid: 82d1821485d0ec0468193ebf58acdb6d, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 693919283498931514, guid: 82d1821485d0ec0468193ebf58acdb6d, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 693919283498931514, guid: 82d1821485d0ec0468193ebf58acdb6d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 693919283498931514, guid: 82d1821485d0ec0468193ebf58acdb6d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1346388854}
@@ -4056,6 +4111,18 @@ PrefabInstance:
       propertyPath: _langManager
       value: 
       objectReference: {fileID: 1346388854}
+    - target: {fileID: 693919283498931517, guid: 82d1821485d0ec0468193ebf58acdb6d, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 693919283498931517, guid: 82d1821485d0ec0468193ebf58acdb6d, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 693919283498931517, guid: 82d1821485d0ec0468193ebf58acdb6d, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82d1821485d0ec0468193ebf58acdb6d, type: 3}
 --- !u!1 &1439334536
@@ -4568,7 +4635,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ID: ID_Play
-  _langManager: {fileID: 1346388854}
   _myView: {fileID: 907860114}
 --- !u!1 &1667536535
 GameObject:
@@ -5839,7 +5905,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ID: ID_Options
-  _langManager: {fileID: 1346388854}
   _myView: {fileID: 1931773272}
 --- !u!1 &2019184961
 GameObject:
@@ -5894,7 +5959,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ID: ID_Options
-  _langManager: {fileID: 1346388854}
   _myView: {fileID: 1667536537}
 --- !u!114 &2019184964
 MonoBehaviour:

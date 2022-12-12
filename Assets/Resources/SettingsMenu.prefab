@@ -84,7 +84,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7930552304350090786}
-  - component: {fileID: 2230286100320040421}
+  - component: {fileID: 4300501148124408368}
   m_Layer: 0
   m_Name: LenguageManager
   m_TagString: Untagged
@@ -106,7 +106,7 @@ Transform:
   m_Father: {fileID: 7888437095990352774}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2230286100320040421
+--- !u!114 &4300501148124408368
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -115,11 +115,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 7292570449979825840}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0eec57c68750e23498e974cccf2b758d, type: 3}
+  m_Script: {fileID: 11500000, guid: d3e9da237c863bf4fb4aec6d5b308ad8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _externalURL: https://docs.google.com/spreadsheets/d/e/2PACX-1vRuw7cBbviS01tUPio5oR3NycgSkv5nPQoYyCoicqBy8Mc51Huy02XWpYrdgLKpXPrtc-K-NmtL93Rj/pub?output=csv
-  _selectedLanguage: 0
 --- !u!1 &7888437093948909701
 GameObject:
   m_ObjectHideFlags: 0
@@ -523,7 +521,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ID: ID_SEV
-  _langManager: {fileID: 2230286100320040421}
   _myView: {fileID: 7888437096016473250}
 --- !u!1 &7888437094196351791
 GameObject:
@@ -1242,7 +1239,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ID: ID_MastVol
-  _langManager: {fileID: 2230286100320040421}
   _myView: {fileID: 7888437095296251853}
 --- !u!1 &7888437094710117710
 GameObject:
@@ -1792,7 +1788,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ID: ID_Music
-  _langManager: {fileID: 2230286100320040421}
   _myView: {fileID: 7888437094196351789}
 --- !u!1 &7888437095190960155
 GameObject:
@@ -1986,7 +1981,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ID: ID_BGSV
-  _langManager: {fileID: 2230286100320040421}
   _myView: {fileID: 7888437095866357640}
 --- !u!1 &7888437095296251855
 GameObject:
@@ -2306,7 +2300,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ID: ID_Options
-  _langManager: {fileID: 2230286100320040421}
   _myView: {fileID: 7888437095467776882}
 --- !u!1 &7888437095534294141
 GameObject:
@@ -2700,7 +2693,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ID: ID_Back
-  _langManager: {fileID: 2230286100320040421}
   _myView: {fileID: 7888437094090294242}
 --- !u!1 &7888437095986667278
 GameObject:

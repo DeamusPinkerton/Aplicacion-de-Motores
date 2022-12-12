@@ -9,9 +9,10 @@ public enum Language
     eng,
     spa
 }
-
+[DefaultExecutionOrder(0)]
 public class LanguageManager : MonoBehaviour
 {
+    public static LanguageManager instance;
     [SerializeField]
     string _externalURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRuw7cBbviS01tUPio5oR3NycgSkv5nPQoYyCoicqBy8Mc51Huy02XWpYrdgLKpXPrtc-K-NmtL93Rj/pub?output=csv";
     [SerializeField]
@@ -21,11 +22,7 @@ public class LanguageManager : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(DownloadCSV(_externalURL));
-    }
 
-    void Update()
-    {
         if (PlayerPrefs.GetInt("Language") == 1)
         {
             _selectedLanguage = Language.spa;
@@ -34,6 +31,27 @@ public class LanguageManager : MonoBehaviour
         {
             _selectedLanguage = Language.eng;
         }
+    }
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        DontDestroyOnLoad(this.gameObject);
+        StartCoroutine(DownloadCSV(_externalURL));
+    }
+
+    void Update()
+    {
+        //if (PlayerPrefs.GetInt("Language") == 1)
+        //{
+        //    _selectedLanguage = Language.spa;
+        //}
+        //else
+        //{
+        //    _selectedLanguage = Language.eng;
+        //}
     }
 
     public void SwapLanguage()
@@ -48,7 +66,7 @@ public class LanguageManager : MonoBehaviour
             PlayerPrefs.SetInt("Language", 0);
             _selectedLanguage = Language.eng;
         }
-        //onUpdate();
+        onUpdate();
     }
 
     public string GetTranslate(string id)
@@ -78,6 +96,14 @@ public class LanguageManager : MonoBehaviour
         //llamar funcion
 
         onUpdate();
+    }
+
+    public void Force()
+    {
+        if (_languageManager != null)
+        {
+            onUpdate();
+        }
     }
 }
 

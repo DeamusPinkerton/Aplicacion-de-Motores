@@ -542,7 +542,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ID: ID_Store
-  _langManager: {fileID: 1707203783}
   _myView: {fileID: 257672371}
 --- !u!1 &371388912 stripped
 GameObject:
@@ -2211,7 +2210,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ID: ID_Back
-  _langManager: {fileID: 1707203783}
   _myView: {fileID: 2042663197}
 --- !u!1 &1499429174
 GameObject:
@@ -2878,6 +2876,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1707203784}
   - component: {fileID: 1707203783}
+  - component: {fileID: 1707203785}
   m_Layer: 0
   m_Name: Language Manager
   m_TagString: Untagged
@@ -2913,6 +2912,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1707203785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1707203782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3e9da237c863bf4fb4aec6d5b308ad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1711121845
 PrefabInstance:
   m_ObjectHideFlags: 0

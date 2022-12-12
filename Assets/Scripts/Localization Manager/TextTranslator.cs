@@ -3,28 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-
+[DefaultExecutionOrder(1)]
 public class TextTranslator : MonoBehaviour
 {
     [SerializeField]
     string _ID;
-    [SerializeField]
-    LanguageManager _langManager;
+    //[SerializeField]
+    //LanguageManager _langManager;
     [SerializeField]
     TextMeshProUGUI _myView;
+    LanguageManager _langManager;
 
     void Awake()
     {
-        _langManager.onUpdate += ChangeLange;
+        //_langManager = FindObjectOfType<LanguageManager>();
+        //Debug.Log(_langManager);
+        //_langManager.onUpdate += ChangeLange;
+        LanguageManager.instance.onUpdate += ChangeLange;
     }
 
     void ChangeLange()
     {
-        _myView.text = _langManager.GetTranslate(_ID);
+        _myView.text = LanguageManager.instance.GetTranslate(_ID);
     }
 
-    private void OnDisable()
-    {
-        _langManager.onUpdate -= ChangeLange;
-    }
+    //private void OnDisable()
+    //{
+    //    LanguageManager.instance.onUpdate -= ChangeLange;
+    //}
 }
