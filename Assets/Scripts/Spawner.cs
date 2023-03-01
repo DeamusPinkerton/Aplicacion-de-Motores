@@ -109,9 +109,20 @@ public class Spawner : MonoBehaviour
                 b.transform.rotation = rotation;
                 b.GetComponent<Rigidbody>().AddForce(b.transform.up * force, ForceMode.Impulse);
             }
-            //GameObject fruit = Instantiate(Prefab, position, rotation);
-            //Destroy(fruit, MaxLifeTime);
-            //fruit.GetComponent<Rigidbody>().AddForce(fruit.transform.up * force, ForceMode.Impulse);
+            else if (WhichFruit == 7)
+            {
+                Fruit b = NutFactory.Instance.pool.GetObject();
+                b.transform.position = position;
+                b.transform.rotation = rotation;
+                b.GetComponent<Rigidbody>().AddForce(b.transform.up * force, ForceMode.Impulse);
+            }
+            else if (WhichFruit == 8)
+            {
+                Fruit b = SugarFactory.Instance.pool.GetObject();
+                b.transform.position = position;
+                b.transform.rotation = rotation;
+                b.GetComponent<Rigidbody>().AddForce(b.transform.up * force, ForceMode.Impulse);
+            }
 
             yield return new WaitForSeconds(Random.Range(MinSpawnDelay, MaxSpawnDelay));
         }

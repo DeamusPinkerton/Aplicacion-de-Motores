@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Fruit : MonoBehaviour
 {
+    public GameObject Shell;
     public GameObject Whole;
     public GameObject Sliced;
     [SerializeField] private int FruitCode = 0;
@@ -20,7 +21,10 @@ public class Fruit : MonoBehaviour
 
     [SerializeField] bool _isFruit = true;
     [SerializeField] bool _isRotten = false;
+    [SerializeField] bool _isNut = false;
+    [SerializeField] bool _hasShell = false;
     [SerializeField] float _speed;
+    [SerializeField] float _delay;
     IAdvance _currentAdvance;
     IAdvance _myFallAdvance;
     IAdvance _mySinuousAdvance;
@@ -34,6 +38,7 @@ public class Fruit : MonoBehaviour
     [SerializeField] private int _chance = 0;
 
     public int Points = 1;
+    public int PMTimer = 0;
 
     private void Awake()
     {
@@ -111,24 +116,37 @@ public class Fruit : MonoBehaviour
 
             _currentAdvance?.Advance();
         }
+        if (_delay > 0)
+        {
+            _delay -= Time.deltaTime;
+        }
     }
-    /*
-    public void Spawn()
-    {
-        Vector3 position = new Vector3();
-        position.x = Random.Range(SpawnArea.bounds.min.x, SpawnArea.bounds.max.x);
-        position.y = Random.Range(SpawnArea.bounds.min.y, SpawnArea.bounds.max.y);
-        position.z = Random.Range(SpawnArea.bounds.min.z, SpawnArea.bounds.max.z);
-        Quaternion rotation = Quaternion.Euler(0f, 0f, Random.Range(MinAngle, MaxAngle));
-        this.transform.position = position;
-        this.transform.rotation = rotation;
-    }
-    */
+
     private void Slice(Vector3 direction, Vector3 position, float force)
     {
-        if (_isFruit)
+        // Added
+        if (_isNut && _hasShell)
+        {
+            FindObjectOfType<GameManager>().IncreaseScore(0);
+
+            Shell.SetActive(false);
+            Whole.SetActive(true);
+
+            FruitCLR.enabled = false;
+            JuicePteEf.Play();
+            SliceFrt.Play();
+            _hasShell = false;
+            _isFruit = true;
+            _delay = 1f;
+        }
+        // End
+
+        if (_isFruit && (_delay <= 0))
         {
             FindObjectOfType<GameManager>().IncreaseScore(Points);
+            // Added
+            FindObjectOfType<GameManager>().PointMultiplier(PMTimer);
+            // End
 
             Whole.SetActive(false);
             Sliced.SetActive(true);
@@ -152,7 +170,25 @@ public class Fruit : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        //if (_isRotten)
+        //{
+        //    if (other.CompareTag("Player"))
+        //    {
+        //        FindObjectOfType<TutorialManager>().rottencheck();
+        //    }
+
+        //}
         if (_isFruit)
+        {
+            if (other.CompareTag("Player"))
+            {
+                Blade blade = other.GetComponent<Blade>();
+                Slice(blade.direction, blade.transform.position, blade.SliceForce);
+                FindObjectOfType<TutorialManager>().fruitcheck();
+
+            }
+        }
+        if (_isNut)
         {
             if (other.CompareTag("Player"))
             {
@@ -185,6 +221,12 @@ public class Fruit : MonoBehaviour
                 case 6:
                     RotFactory.Instance.ReturnFruit(this);
                     break;
+                case 7:
+                    NutFactory.Instance.ReturnFruit(this);
+                    break;
+                case 8:
+                    SugarFactory.Instance.ReturnFruit(this);
+                    break;
             }
 
             Vector3 position = new Vector3(0, -9, -1);
@@ -196,6 +238,15 @@ public class Fruit : MonoBehaviour
 
     private void Reset()
     {
+        if (_isNut)
+        {
+            _hasShell = true;
+            _isFruit = false;
+            Shell.SetActive(true);
+            Whole.SetActive(false);
+            Sliced.SetActive(false);
+            FruitCLR.enabled = true;
+        }
         if (_isFruit)
         {
             Whole.SetActive(true);

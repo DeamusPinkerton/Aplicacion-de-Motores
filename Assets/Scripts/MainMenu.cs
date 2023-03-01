@@ -29,6 +29,11 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.SetInt("HasDoneTutorial", 1);
         SceneManager.LoadScene(1);
     }
+
+    public void Minigame()
+    {
+        SceneManager.LoadScene(4);
+    }
     public void ResetButton()
     {
         PlayerPrefs.SetInt("HasDoneTutorial", 0);
@@ -37,4 +42,5 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.SetInt("MaxStamina", 10);
         PlayerPrefs.SetInt("CosmicKnife", 0);
     }
+
 }

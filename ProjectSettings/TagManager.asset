@@ -6,16 +6,22 @@ TagManager:
   tags:
   - Limits
   - Trail
+  - CheckPoint
+  - Void
+  - Trap
+  - Bomb
+  - Fruit
+  - Rotten
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - Limits
-  - 
-  - 
+  - CheckPoint
+  - Void
   - 
   - 
   - 

@@ -10,9 +10,12 @@ public class GameManager : MonoBehaviour
     public Image FadeImage;
     public Image PuajImage;
     public GameObject timesUp;
+    public GameObject multiplier;
     public TextMeshProUGUI FrootsText;
     public TextMeshProUGUI ScoreInMenuText;
     public TextMeshProUGUI FrootsInMenuText;
+
+    public float Multiplier = 0;
 
     private Blade blade;
     private Spawner spawner;
@@ -44,6 +47,11 @@ public class GameManager : MonoBehaviour
         ClearScene();
     }
 
+    private void Update()
+    {
+        MultiplierTimer();
+    }
+
     private void ClearScene()
     {
         Fruit[] fruits = FindObjectsOfType<Fruit>();
@@ -63,8 +71,19 @@ public class GameManager : MonoBehaviour
 
     public void IncreaseScore(int amount)
     {
+        if (Multiplier > 0)
+        {
+            if (amount > 0)
+            {
+                amount = (amount * 2);
+            }
+        }
         score += amount;
         ScoreText.text = score.ToString();
+    }
+    public void PointMultiplier(int amount)
+    {
+        Multiplier += amount;
     }
 
     public void Explode()
@@ -75,11 +94,25 @@ public class GameManager : MonoBehaviour
     {
         StartCoroutine(Puaj(true));
     }
+    public void MultiplierTimer()
+    {
+        multiplier.SetActive(true);
+        if (Multiplier > 0)
+        {
+            Multiplier -= Time.deltaTime;
+        }
+        else
+        {
+            multiplier.SetActive(false);
+            Multiplier = 0;
+        }
+    }
+
     public void TimesUp()
     {
         blade.enabled = false;
-        spawner.enabled = false;
         timesUp.SetActive(true);
+        spawner.enabled = false;
         ScoreInMenuText.text = score.ToString();
         if (score > 0)
         {

@@ -704,6 +704,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 26dbd5626e135184192ad10dc7b6d032, type: 3}
   m_PrefabInstance: {fileID: 2547234548656398018}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3429756658573206419 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 26dbd5626e135184192ad10dc7b6d032, type: 3}
+  m_PrefabInstance: {fileID: 2547234548656398018}
+  m_PrefabAsset: {fileID: 0}
 --- !u!54 &3638304916979295284
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -964,12 +969,32 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 68a1ae9344196244f9f12477446ec23c, type: 2}
     - target: {fileID: 6977360996106885037, guid: 1bc841bbcd302454eb99887be15bda28, type: 3}
+      propertyPath: Shell
+      value: 
+      objectReference: {fileID: 7878139384496145636}
+    - target: {fileID: 6977360996106885037, guid: 1bc841bbcd302454eb99887be15bda28, type: 3}
+      propertyPath: Whole
+      value: 
+      objectReference: {fileID: 3429756658573206419}
+    - target: {fileID: 6977360996106885037, guid: 1bc841bbcd302454eb99887be15bda28, type: 3}
       propertyPath: Points
       value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6977360996106885037, guid: 1bc841bbcd302454eb99887be15bda28, type: 3}
+      propertyPath: _isNut
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6977360996106885037, guid: 1bc841bbcd302454eb99887be15bda28, type: 3}
+      propertyPath: _isFruit
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6977360996106885037, guid: 1bc841bbcd302454eb99887be15bda28, type: 3}
       propertyPath: FruitCode
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6977360996106885037, guid: 1bc841bbcd302454eb99887be15bda28, type: 3}
+      propertyPath: _hasShell
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8790414220588308900, guid: 1bc841bbcd302454eb99887be15bda28, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -989,5 +1014,10 @@ Transform:
 --- !u!4 &7358625240736865886 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1001014915013735255, guid: 1bc841bbcd302454eb99887be15bda28, type: 3}
+  m_PrefabInstance: {fileID: 7780891300950895881}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7878139384496145636 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 481745996258388461, guid: 1bc841bbcd302454eb99887be15bda28, type: 3}
   m_PrefabInstance: {fileID: 7780891300950895881}
   m_PrefabAsset: {fileID: 0}

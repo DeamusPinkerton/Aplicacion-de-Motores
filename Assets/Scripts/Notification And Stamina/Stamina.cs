@@ -118,7 +118,7 @@ public class Stamina : MonoBehaviour
     {
         currentStamina = PlayerPrefs.GetInt("currentStamina");
         maxStamina = PlayerPrefs.GetInt("MaxStamina");
-        if (currentStamina >= 5)
+        if (currentStamina >= 2)
         {
           PurshadeBtns.interactable = true;
         }

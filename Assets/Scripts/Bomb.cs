@@ -15,6 +15,7 @@ public class Bomb : MonoBehaviour
         {
             SliceBomb.Play();
             FindObjectOfType<GameManager>().Explode();
+            FindObjectOfType<TutorialManager>().bombtcheck();
         }
     }
 }
