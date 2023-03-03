@@ -1917,7 +1917,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxStamina: 10
-  timeToRecharge: 10
+  timeToRecharge: 25
   staminaText: {fileID: 53324723}
   timerText: {fileID: 1226088538}
   PurshadeBtns: {fileID: 1647262456}
